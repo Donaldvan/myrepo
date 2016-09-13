@@ -43,18 +43,7 @@
 
     </properties>
 
-    <dependencyManagement>
-        <!-- Import the maven Spring IO Platform Bill Of Materials (BOM) -->
-        <dependencies>
-            <dependency>
-                <groupId>io.spring.platform</groupId>
-                <artifactId>platform-bom</artifactId>
-                <version>${spring-io-platform.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    
 
     <dependencies>
         <dependency>
@@ -428,42 +417,56 @@
 		</profile>
    </profiles>
 
-   
+   <dependencyManagement>
+        <!-- Import the maven Spring IO Platform Bill Of Materials (BOM) -->
+        <dependencies>
+            <dependency>
+                <groupId>io.spring.platform</groupId>
+                <artifactId>platform-bom</artifactId>
+                <version>${spring-io-platform.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+	
   <distributionManagement>
   <repository>
     <id>releases</id>
-    <url>http://192.168.145.137:8081/nexus/content/repositories/releases/</url>
+    <url>http://localhost:8081/nexus/content/repositories/releases/</url>
   </repository>
   <snapshotRepository>
     <id>snapshots</id>
-    <url>http://192.168.145.137:8081/nexus/content/repositories/snapshots/</url>
+    <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
   </snapshotRepository>
 </distributionManagement>
-<repositories>
+<!--repositories>
     <repository>
         <id>releases</id>
         <url>http://192.168.145.137:8081/nexus/content/groups/public/</url>
         <releases>
-<enabled>true</enabled>
-</releases>
-<snapshots>
-<enabled>true</enabled>
-</snapshots>
-</repository>
-   
-   </repositories>
-<pluginRepositories>
+			<enabled>true</enabled>
+		</releases>
+		<snapshots>
+			<enabled>true</enabled>
+		</snapshots>
+	</repository>
+ </repositories-->
+
+<!--pluginRepositories>
+
 <pluginRepository>
-<id>releases</id>
+	<id>releases</id>
         <url>http://192.168.145.137:8081/nexus/content/groups/public/</url>
         <releases>
-<enabled>true</enabled>
-</releases>
-<snapshots>
-<enabled>true</enabled>
-</snapshots>
+			<enabled>true</enabled>
+		</releases>
+	<snapshots>
+		<enabled>true</enabled>
+	</snapshots>
 </pluginRepository>
-</pluginRepositories>
+
+</pluginRepositories-->
    
-    <url>demopetclinic</url>
+ <url>demopetclinic</url>
 </project>
